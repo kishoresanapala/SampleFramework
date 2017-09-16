@@ -30,11 +30,11 @@ import com.sun.jna.Platform;
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.WinNT;
 
-public class ExecutionContext {
+public class BrowserInitiator {
 	public WebDriver driver;
 	private String MachineIP;
 
-	public ExecutionContext(String testName, String RunAgainst, String browser, String version) {
+	public BrowserInitiator(String testName, String RunAgainst, String browser, String version) {
 
 	}
 

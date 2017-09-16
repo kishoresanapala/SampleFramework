@@ -31,7 +31,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.lora.walmart.jbehaveoverride.JUnitStoryCustom;
-import com.lora.walmart.utility.ExecutionContext;
+import com.lora.walmart.utility.BrowserInitiator;
 import com.lora.walmart.utility.POJOCompenentsHolder;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -42,8 +42,8 @@ public class FrameworkDriver extends JUnitStoryCustom {
 	private String story;
 	public static String getModuleName;
 	public static String givenStoryName;
-	public ExecutionContext context;
-	public static ExecutionContext context1;
+	public BrowserInitiator context;
+	public static BrowserInitiator context1;
 	public POJOCompenentsHolder pojoCompenentsHolder;
 	public static String Environment;
 	public static int invokeBrowserCounter = 1;
@@ -81,7 +81,7 @@ public class FrameworkDriver extends JUnitStoryCustom {
 			List<Object> listOfSteps = new LinkedList<Object>();
 			for (Class<?> clazz : listOfAllSetps) {
 				try {
-					listOfSteps.add(clazz.getConstructor(ExecutionContext.class, POJOCompenentsHolder.class).newInstance(new Object[] { context, pojoCompenentsHolder }));
+					listOfSteps.add(clazz.getConstructor(BrowserInitiator.class, POJOCompenentsHolder.class).newInstance(new Object[] { context, pojoCompenentsHolder }));
 				} catch (Exception e) {
 					// Object t = clazz.newInstance();
 					Method[] declaredMethods = clazz.getDeclaredMethods();
@@ -145,7 +145,7 @@ public class FrameworkDriver extends JUnitStoryCustom {
 			invokeParallelBrowser(RunAgainst, platform, browser, version);
 		} else {
 			if (invokeBrowserCounter == 1) {
-				context1 = new ExecutionContext(pojoCompenentsHolder.getTestName(), RunAgainst, browser, version);
+				context1 = new BrowserInitiator(pojoCompenentsHolder.getTestName(), RunAgainst, browser, version);
 				context1.initiateDriver(RunAgainst, platform, browser, version);
 			}
 			context = context1;
@@ -194,7 +194,7 @@ public class FrameworkDriver extends JUnitStoryCustom {
 	}
 
 	public void invokeParallelBrowser(String RunAgainst, String platform, String browser, String version) {
-		context = new ExecutionContext(pojoCompenentsHolder.getTestName(), RunAgainst, browser, version);
+		context = new BrowserInitiator(pojoCompenentsHolder.getTestName(), RunAgainst, browser, version);
 		try {
 			context.initiateDriver(RunAgainst, platform, browser, version);
 		} catch (Exception e) {

@@ -9,20 +9,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.lora.walmart.testexecutor.FrameworkDriver;
-import com.lora.walmart.utility.ExecutionContext;
+import com.lora.walmart.utility.BrowserInitiator;
 import com.lora.walmart.utility.POJOCompenentsHolder;
 import com.lora.walmart.utility.PropertiesFile;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class GenericFucntions {
-	public ExecutionContext context;
+	public BrowserInitiator context;
 	private static String Url = PropertiesFile.GetEnvironmentProperty("Url");
 	private static final String screenshotForPassed = PropertiesFile.GetEnvironmentProperty("ScreenshotForPassed");
 	private static final String screenshotForFailed = PropertiesFile.GetEnvironmentProperty("ScreenshotForFailed");
 	public static final String applicationSyncTime = PropertiesFile.GetEnvironmentProperty("ApplicationSyncTime");
 	protected POJOCompenentsHolder pojoCompenentsHolder;
 
-	public GenericFucntions(ExecutionContext context, POJOCompenentsHolder pojoCompenentsHolder) {
+	public GenericFucntions(BrowserInitiator context, POJOCompenentsHolder pojoCompenentsHolder) {
 		this.context = context;
 		this.pojoCompenentsHolder = pojoCompenentsHolder;
 	}
@@ -38,7 +38,7 @@ public class GenericFucntions {
 		}
 	}
 
-	public WebElement FindElement(ExecutionContext context, By by) {
+	public WebElement FindElement(BrowserInitiator context, By by) {
 		return context.driver.findElement(by);
 	}
 
@@ -65,7 +65,7 @@ public class GenericFucntions {
 		}
 	}
 
-	public String captureScreenShot(ExecutionContext context) {
+	public String captureScreenShot(BrowserInitiator context) {
 		String fileInfo = null;
 		String screenShotPath;
 		try {

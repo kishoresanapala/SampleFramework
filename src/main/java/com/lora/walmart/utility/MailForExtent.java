@@ -6,7 +6,7 @@ public class MailForExtent extends GenericFucntions {
 
 	POJOCompenentsHolder pojoCompenentsHolder;
 
-	public MailForExtent(ExecutionContext context, POJOCompenentsHolder pojoCompenentsHolder) {
+	public MailForExtent(BrowserInitiator context, POJOCompenentsHolder pojoCompenentsHolder) {
 		super(context, pojoCompenentsHolder);
 	}
 
