@@ -132,9 +132,9 @@ public class FrameworkDriver extends JUnitStoryCustom {
 		extent = new ExtentReports(extentFileName, false, NetworkMode.ONLINE);
 	}
 
-	@Parameters({ "storyName", "RunAgainst", "Client", "platform", "browser", "version", "appName", "runFor" })
+	@Parameters({ "storyName", "RunAgainst", "platform", "browser", "version" })
 	@BeforeTest(alwaysRun = true)
-	public void beforeTest(ITestContext ctx, String storyName, String RunAgainst, String Client, String platform, String browser, String version, @Optional("") String appName, @Optional("") String runFor) throws Exception {
+	public void beforeTest(ITestContext ctx, String storyName, String RunAgainst, String platform, String browser, String version) throws Exception {
 		System.out.println("before test");
 		pojoCompenentsHolder = new POJOCompenentsHolder();
 		pojoCompenentsHolder.setTestName(ctx.getCurrentXmlTest().getName());

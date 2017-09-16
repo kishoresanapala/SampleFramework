@@ -5,8 +5,6 @@
 			<class name="com.lora.walmart.testexecutor.FrameworkDriver" />
 			<parameter name="storyName" value="Regression/Login.story" />
 			<parameter name="RunAgainst" value="FIT" />
-			<parameter name="Client" value="" />
-			<parameter name="runFor" value="" />
 			<parameter name="platform" value="WINDOWS" />
 			<parameter name="browser" value="Firefox" />
 			<parameter name="version" value="" />
