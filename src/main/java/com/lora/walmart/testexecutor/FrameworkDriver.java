@@ -128,7 +128,7 @@ public class FrameworkDriver extends JUnitStoryCustom {
 		suiteName = Istx.getSuite().getName();
 		isParallel = Istx.getSuite().getParallel();
 		reportGenerationTime = getCurrentTimeWithMilliSeconds();
-		String extentFileName = System.getProperty("user.dir") + "\\test-output\\" + suiteName + "_" + reportGenerationTime + "_ExecutionReport.html";
+		String extentFileName = System.getProperty("user.dir") + "\\test-output\\MyResults\\" + suiteName + "_" + reportGenerationTime + "_ExecutionReport.html";
 		extent = new ExtentReports(extentFileName, false, NetworkMode.ONLINE);
 	}
 
